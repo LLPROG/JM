@@ -1,0 +1,315 @@
+/* utility */
+@import url(//db.onlinewebfonts.com/c/e934b630586ca9b7fe66c99ac1592f4a?family=DIN);
+
+@font-face {font-family: "DIN"; src: url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.eot"); src: url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.woff") format("woff"), url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/e934b630586ca9b7fe66c99ac1592f4a.svg#DIN") format("svg"); }
+
+:root {
+    --black: #000101;
+    --gray: #B9B9B9;
+    --white: #E4E4E4;
+    --yellow: #FF9F00;
+    --orange: #C57B00;
+}
+
+html {
+    font-family: 'DIN', Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--black);
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo h3 {
+    font-size: 3em;
+    color: orange;
+    font-weight: bold;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+}
+
+.hamb {
+    margin-left: auto;
+    width: 3.5rem;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0%;
+    background-color: transparent;
+    border: none;
+
+    position: relative;
+    z-index: 999;
+}
+
+.hamb span {
+    width: 100%;
+    height: .3rem;
+    background-color: var(--white);
+}
+
+.hamb .m {
+    width: 70%;
+}
+
+.menu {
+    width: 100%;
+    padding: 1rem;
+
+    position: absolute;
+    top: 0;
+    right: -120%;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--white);
+}
+
+.menu li a {
+    color: var(--black);
+}
+
+
+/* home */
+
+.main {
+    width: 100vw;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 1, 1, 0) 75.52%, #000101 91.67%), url('../img/bk-home.jpg');
+    background-size: cover;
+    background-position: 80% top;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.home::after {
+    content: '';
+    width: 100%;
+    height: 20px;
+    background: -moz-linear-gradient(top,#ffffff00 0%, #ffffff00 20%, var(--black) 100%);
+    background: -webkit-linear-gradient(top,#ffffff00 0%, #ffffff00 20%, var(--black) 100%);
+    background: linear-gradient(to bottom,#ffffff00 0%, #ffffff00 20%, var(--black) 100%);
+    position: absolute;
+    bottom: 0;
+}
+
+.home h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+    min-height: 70vh;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.home .canva {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.home .canva.one {
+    mix-blend-mode: hue;
+} 
+
+.home .canva.two {
+    mix-blend-mode: color-dodge;
+} 
+
+.home .canva.tree {
+    color: var(--orange);
+    opacity: 20%;
+} 
+
+.home h1 .jo {
+    font-size: 23vw;
+}
+
+.home h1 .ma {
+    font-size: 18vw;
+}
+
+/* player */
+
+.player {
+    color: var(--white);
+    width: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding-top: 5rem;
+    margin: 0 auto;
+}
+
+.top-wr {
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+}
+
+/* .details {
+    height: 2rem;
+} */
+
+.playpause-track {
+    background-color: transparent;
+    border: none;
+}
+
+.fa-pause  {
+    color: var(--white);
+    font-size: 1.3em;
+}
+
+.fa-play {
+    color: var(--white);
+    font-size: 1.3em;
+}
+
+.track-album {
+    color: var(--yellow);
+}
+
+.free {
+    margin-left: auto;
+    background-color: var(--black);
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    border-radius: 20px;
+    height: 2rem;
+    padding: 0 1rem;
+    margin-right: 0.2rem;
+    font-size: 0.7em;
+}
+
+.current-time,
+.slash,
+.total-duration {
+    align-self: flex-end;
+    font-size: 0.7em;
+}
+
+/* style player sliders chrome*/
+
+.bottom-wr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slider_container {
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+
+.bottom-wr input {
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    max-width: 400px;
+    outline: none; 
+    transition: 450ms ease-in;
+    accent-color: var(--orange);
+  }
+  
+  input::-webkit-slider-thumb {
+    background-color: var(--orange);
+    border-radius: 0;
+        
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    accent-color: var(--orange);
+  }
+
+  /* about */
+
+ .about {
+    background-color: var(--black);
+ }
+
+ .about article {
+    padding: 1rem 1rem 3rem 1rem;
+    position: relative;
+ }
+
+ .about article h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--yellow);
+    padding: 2rem 0;
+    text-align: center;
+ }
+
+ .about article p {
+    color: var(--white);
+    text-align: justify;
+    line-height: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+ }
+
+ .bk-about {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #000101 3.73%, rgba(0, 1, 1, 0.529883) 14.89%, rgba(0, 1, 1, 0.246581) 22.92%, rgba(0, 1, 1, 0.11888) 28.23%, rgba(0, 1, 1, 0) 36.41%, rgba(0, 1, 1, 0) 81.45%, rgba(0, 1, 1, 0.372564) 89.1%, #000101 96.35%), url('../img/bk-about.jpg');
+    background-blend-mode: multiply, normal;
+    background-position: 75% 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    text-align: right;
+    padding: 1rem 1rem 1rem 1rem;
+
+ }
+
+ .bk-about h2 {
+    font-size: max(6vw) ;
+    font-weight: bold;
+    line-height: 1.5em;
+    color: #b9b9b08a;
+ }
+
+ .bk-about p {
+    line-height: 1.5em;
+    color: #b9b9b08a;
+ }
+
+ .pell {
+    max-width: 700px;
+ }
+
+
+
+

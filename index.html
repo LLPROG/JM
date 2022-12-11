@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Johnny Marsiglia</title>
+</head>
+
+<body>
+
+
+    <!-- header -->
+    <header>
+        <div class="logo">
+            <h3>
+                JM
+            </h3>
+        </div>
+
+        <nav>
+            <button class="hamb">
+                <span class="t"></span>
+                <span class="m"></span>
+                <span class="b"></span>
+            </button>
+            <ul class="menu">
+                <li><a href="#!">HOME</a></li>
+                <li><a href="#!">BIOGRAFIA</a></li>
+                <li><a href="#!">DISCOGRAFIA</a></li>
+                <li><a href="#!">GALLERY</a></li>
+                <li><a href="#!">TOUR/EVENTI</a></li>
+                <li><a href="#!">STORE</a></li>
+                <li><a href="#!">CONTATTI</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- main -->
+    <main>
+
+        <!-- section home -->
+        <section class="home">
+            <h1>
+                <div class="canva one">
+                    <span class="jo">JOHNNY</span>
+                    <span class="ma">MARSIGLIA</span>
+                </div>
+                <div class="canva two">
+                    <span class="jo">JOHNNY</span>
+                    <span class="ma">MARSIGLIA</span>
+                </div>
+                <div class="canva tree">
+                    <span class="jo">JOHNNY</span>
+                    <span class="ma">MARSIGLIA</span>
+                </div>
+            </h1>
+            <div class="player">
+                <div class="wrapper">
+                    <div class="top-wr">
+                        <button class="playpause-track" onclick="playpauseTrack()">
+                            <i class="fa-solid fa-play" title="random"></i>
+                        </button>
+
+                        <div class="datails">
+                            <!-- <div class="now-playing"></div>
+                            <div class="track-art"></div> -->
+                            <div class="track-name">CLESSIDRA(INTRO)</div>
+                            <div class="track-album">MEMORY</div>
+                        </div>
+
+                        <button class="free">
+                            FREE
+                        </button>
+
+                        <div class="current-time">00:00</div>
+                        <div class="slash">&#47;</div>
+                        <div class="total-duration">00:00</div>
+                    </div>
+
+                    <div class="bottom-wr">
+                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+
+                        <div class="slider_container">
+                            <i class="fa fa-volume-down"></i>
+                            <input type="range" min="1" max="100" value="99" class="volume_slider"
+                                onchange="setVolume()">
+                            <i class="fa fa-volume-up"></i>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- section about -->
+        <section class="about">
+            <article>
+                <h1>
+                    JOHNNY MARSIGLIA
+                </h1>
+                <p>
+                    è un rapper italiano classe ’86 nato a Palermo da padre palermitano e madre capoverdiana. Un rapper
+                    che
+                    ama sperimentare a livello musicale, che con i suoi brani racconta e denuncia ciò che accade nella
+                    nostra realtà, consacrando il suo nome tra i migliori rapper d’Italia. La sua voce scura, dal groove
+                    profondo e graffiante, entra sottopelle e non va più via come un tatuaggio indelebile, amalgamandosi
+                    perfettamente a beat e synth onirici e armoniosi. Il risultato sono brani per cui è impossibile
+                    mettere
+                    su “pausa”.
+                </p>
+            </article>
+
+            <div class="bk-about">
+                <img src="img/CITAZIONE BIO.png" alt="CITAZIONE BIO" class="pell">
+            </div>
+        </section>
+
+        <!-- section discografia -->
+        <section class="disco">
+            <h1>
+                DISCOGRAFIA
+            </h1>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/PixiPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <!-- my script -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
