@@ -265,7 +265,7 @@ nav {
  }
 
  .about article h1 {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: bold;
     color: var(--yellow);
     padding: 2rem 0;
@@ -310,6 +310,170 @@ nav {
     max-width: 700px;
  }
 
+ /* discografia */
 
+ .disco {
+    color: var(--white);
+ }
+
+ .disco h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--yellow);
+    padding: 2rem 0;
+    text-align: center;
+ }
+
+ .disco .cards .canva {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+ }
+
+ .disco .cards .canva button {
+    width: 30px;
+    height: 30px;
+    background-color: var(--gray);
+    border-radius: 20px;
+ }
+
+ .disco .cards .my-card {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+ }
+ 
+ .disco .my-card h2 {
+    font-size: 3.2em;
+    font-weight: bold;
+    color: var(--white);
+ }
+
+ .disco .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+ }
+
+ .disco .buttons button {
+    color: var(--yellow);
+    background-color: var(--black);
+    border: 5px solid var(--yellow);
+    border-radius: 20px;
+    padding: 0.3rem 0.6rem;
+    width: 40%;
+ }
+
+ .disco article {
+    position: relative;
+ }
+
+ .disco article img {
+    width: 20%;
+    max-width: 70px;
+    fill-rule: var(--orange);
+    position: absolute;
+
+ }
+
+ .disco article img.top {
+    top: 0;
+    left: -20px;
+    transform: rotate(180deg);
+ }
+
+ .disco article img.bottom {
+    right: -20px;
+    bottom: 0;
+ }
+
+ .disco article .content {
+    padding: 4rem 0;
+    line-height: 30px;
+    font-size: 1.2em;
+    text-align: justify;
+ }
+
+ .disco h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+ }
+
+ .disco ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 1rem;
+  }
+  .disco ol li {
+    counter-increment: my-awesome-counter;
+    display: flex;
+    gap: 0.5rem;
+    width: 50%;
+    font-size: 1.2rem;
+  }
+  .disco ol li::before {
+    content: "0" counter(my-awesome-counter);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .bk-disco {
+    overflow: hidden;
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(180deg, #000101 0%, rgba(0, 1, 1, 0.524896) 5.19%, rgba(0, 1, 1, 0) 9.91%, rgba(0, 1, 1, 0) 89.15%, rgba(0, 1, 1, 0.511662) 94.52%, #000101 100%), url('../img/bk-disco.JPG');
+    background-size: max(700px);
+    background-repeat: no-repeat;
+    background-position: 80% center;
+  }
+
+/* gallery */
+
+.gallery {
+    padding: 3rem 1rem;
+}
+
+.gallery h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+.gallery-grid {
+    padding: 2rem 1rem;
+    width: 100%;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(25, 1fr);
+
+}
+
+.gallery-grid .grid-item {
+    padding: 50px;
+    background-color: var(--white);
+}
+
+.grid-row-span-3 {
+    grid-row: span 3;
+}
+
+.grid-row-span-2 {
+    grid-row: span 2;
+}
+
+.grid-max {
+    grid-row: span 5;
+    grid-column: span 2;
+}
 
 
