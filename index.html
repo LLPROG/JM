@@ -20,7 +20,7 @@
 
 
     <!-- header -->
-    <header>
+    <header id="header">
         <div class="logo">
             <h3>
                 JM
@@ -29,9 +29,13 @@
 
         <nav>
             <button class="hamb">
-                <span class="t"></span>
-                <span class="m"></span>
-                <span class="b"></span>
+                <div class="t"></div>
+                <div class="m">
+                    <div class="x"></div>
+                    <div class="y"></div>
+                </div>
+                <div class="b"></div>
+
             </button>
             <ul class="menu">
                 <li><a href="#!">HOME</a></li>
@@ -136,53 +140,30 @@
 
             <div class="cards">
                 <div class="canva">
-                    <button class="1"></button>
-                    <button class="2"></button>
-                    <button class="3"></button>
-                    <button class="4"></button>
+                    <!-- <form> -->
+                    <input type="radio" name="el" checked>
+                    <input type="radio" name="el">
+                    <input type="radio" name="el">
+                    <input type="radio" name="el">
+                    <!-- </form> -->
                 </div>
 
-                <!-- inizio card -->
-                <div class="my-card">
-                    <h2 class="title-album">
-                        MEMORY
-                    </h2>
-                    <span class="year">
-                        - 2018 -
-                    </span>
-                    <img src="img/cover.jpg" alt="cover">
-                    <div class="buttons">
-                        <button id="listen" class="my-btn">ASCOLTA</button>
-                        <button id="share" class="my-btn">CONDIVIDI</button>
-                        <button id="info" class="my-btn">INFO</button>
+                <div class="wrapper">
+                    <div class="slider">
+                        <div class="my-card">
+
+                        </div>
+                        <div class="my-card">
+
+                        </div>
+                        <div class="my-card">
+
+                        </div>
+                        <div class="my-card">
+
+                        </div>
                     </div>
-                    <article>
-                        <img src="img/quot.png" alt="virgolette top" class="top">
-                        <p class="content">
-                            Memory perché ho scoperchiato l'hard disk dei ricordi e delle esperienze, ma non con
-                            nostalgia, è come un pass per fare entrare l'ascoltatore nel nostro mondo. Quando scrivevo i
-                            testi avevo come obbiettivo quello di aprirmi come non ho mai fatto in passato e di
-                            raccontare alcune esperienze che mi hanno reso l'uomo che sono adesso. è un lavoro profondo
-                            che ha l'intenzione di dire “noi siamo questo, abbiamo fatto questo, queste sono le cose che
-                            per noi sono importanti, amiamo la nostra città e vogliamo fare qualcosa di significativo”.
-                        </p>
-                        <img src="img/quot.png" alt="virgolette top" class="bottom">
-
-                    </article>
-                    <h3>
-                        BRANI
-                    </h3>
-                    <ol class="list-track">
-                        <li>Clessidra</li>
-                        <li>Clessidra</li>
-                        <li>Clessidra</li>
-                        <li>Clessidra</li>
-                        <li>Clessidra</li>
-                        <li>Clessidra</li>
-                        <li>Clessidra</li>
-                    </ol>
                 </div>
-                <!-- fine card -->
             </div>
 
             <div class="bk-disco"></div>
@@ -195,7 +176,7 @@
                 GALLERIA
             </h1>
 
-            <section class="flex">
+            <section class="flex border-hide">
                 <div class="cont">
                     <div class="cont-up">
                         <div class="cont-left">
@@ -246,13 +227,14 @@
                         </div>
                     </div>
                 </div>
-                <button class="more" id="more-gallery">
-                    <div class="span">
-                        Mostra altro
-                    </div>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
             </section>
+
+            <button class="more" id="more-gallery">
+                <div class="span">
+                    Mostra altro
+                </div>
+                <i class="fa-solid fa-chevron-down icon-rotate"></i>
+            </button>
 
         </section>
 
@@ -618,14 +600,65 @@
 
         <!-- section contacts -->
         <section class="contacts">
+            <div class="cont-contacts">
+                <h1>
+                    CONTATTI
+                </h1>
 
+                <div class="form">
+                    <label for="name">NOME</label>
+                    <input type="text" id="name" name="name" class="input" placeholder="Scrivi il tuo nome">
+
+                    <label for="email">E-MAIL</label>
+                    <input type="email" id="email" name="email" class="input" placeholder="Scrivi la tua email">
+
+                    <label for="message">MESSAGGIO</label>
+                    <textarea id="message" name="message" class="input"
+                        placeholder="Scrivi il tuo messaggio"></textarea>
+
+                    <input type="submit" value="INVIA" class="my-btn sub">
+                </div>
+            </div>
+
+            <div class="bk-contacts">
+
+            </div>
         </section>
-
-
     </main>
     <footer>
+        <div class="studio">
+            <h2>
+                STUDIO MUSICALE
+            </h2>
+            <P>
+                Via Marsiglia, Palermo, Italy
+            </P>
+        </div>
+
+        <div class="num">
+            <i class="fa-solid fa-phone"></i>
+            <a href="+393519000000">+393519000000</a>
+        </div>
+
+        <div class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="johnny.marsiglia@marsiglia.it">johnny.marsiglia@marsiglia.it</a>
+        </div>
+
+        <div class="social">
+            <i class="fa-brands fa-spotify"></i>
+            <i class="fa-brands fa-deezer"></i>
+            <i class="fa-solid fa-music"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+
 
     </footer>
+
+
+
+    <!-- j-query -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
