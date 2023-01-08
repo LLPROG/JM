@@ -294,6 +294,7 @@ cards.forEach((card, index) => {
 
 let show = false;
 let btnsInfo = document.querySelectorAll('#info');
+
 btnsInfo.forEach(function (el) {
     el.addEventListener('click', () => {
         if (show == false) {
@@ -309,7 +310,6 @@ btnsInfo.forEach(function (el) {
 
 inputRadio.forEach(function (el, i) {
     el.addEventListener('click', () => {
-
         $('.disco .slider').css({ left: '-' + i + '00%' });
         console.log(i)
     })
@@ -336,6 +336,83 @@ btnMoreGallery.addEventListener('click', () => {
 
 })
 
+
+// tour
+
+const btnTourUp = document.getElementById('more-tour-up');
+const btnTourDown = document.getElementById('more-tour-down');
+const dateWrapper = document.querySelector('.date-wrapper');
+let dateFixCont = document.querySelector('.date-fix-cont');
+let heightContTour = document.querySelectorAll('.date-container');
+let dateContainer = document.querySelectorAll('.date-container');
+
+
+let i = 1
+let y = 0
+
+function opacityTourFun() {
+    dateContainer.forEach((el) => {
+        el.classList.remove('opacity-tour');
+    })
+
+    dateContainer[y].classList.add('opacity-tour');
+    dateContainer[y + 2].classList.add('opacity-tour');
+}
+
+opacityTourFun();
+
+btnTourDown.addEventListener('click', () => {
+    if (i <= 3) {
+        dateFixCont.style.top = "-" + (heightContTour[0].clientHeight * i) + "px"
+        i++
+        y++
+        // console.log(i + ' ' + 'i')
+        // console.log(y + ' ' + 'y')
+    }
+
+    opacityTourFun();
+});
+
+btnTourUp.addEventListener('click', () => {
+    if (i == 2) {
+        dateFixCont.style.top = "0px";
+        i = 1
+        y = 0
+    }
+
+    if (i > 2) {
+        y--
+        dateFixCont.style.top = "-" + (heightContTour[0].clientHeight * y) + "px";
+        i--
+    }
+
+    opacityTourFun();
+});
+
+// news
+
+let btnMoreNews = document.getElementById('more-news');
+let articleWrapper = document.querySelector('.article-wrapper');
+let arrowRotate = document.getElementById('icon');
+let x = false
+
+btnMoreNews.addEventListener('click', () => {
+    if (x == false) {
+        articleWrapper.classList.add('show');
+        arrowRotate.classList.remove('fa-chevron-down');
+        arrowRotate.classList.add('fa-chevron-up');
+        x = true
+    } else {
+        articleWrapper.classList.remove('show');
+        arrowRotate.classList.add('fa-chevron-down');
+        arrowRotate.classList.remove('fa-chevron-up');
+        x = false
+    }
+
+
+
+
+})
 
 
 
