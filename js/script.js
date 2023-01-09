@@ -320,17 +320,20 @@ inputRadio.forEach(function (el, i) {
 let btnMoreGallery = document.getElementById('more-gallery');
 let flex = document.querySelector('.flex');
 let iconRotate = document.querySelector('.icon-rotate');
+let altroMenoGallery = document.getElementById('gallery-altro-meno');
 let bool = false
 btnMoreGallery.addEventListener('click', () => {
     if (bool == false) {
         flex.classList.add('show');
         iconRotate.classList.remove('fa-chevron-down');
         iconRotate.classList.add('fa-chevron-up');
+        altroMenoGallery.innerHTML = 'meno';
         bool = true
     } else {
         flex.classList.remove('show');
         iconRotate.classList.remove('fa-chevron-up');
         iconRotate.classList.add('fa-chevron-down');
+        altroMenoGallery.innerHTML = 'altro';
         bool = false
     }
 
@@ -394,6 +397,7 @@ btnTourUp.addEventListener('click', () => {
 let btnMoreNews = document.getElementById('more-news');
 let articleWrapper = document.querySelector('.article-wrapper');
 let arrowRotate = document.getElementById('icon');
+let altroMenoNews = document.getElementById('news-altro-meno');
 let x = false
 
 btnMoreNews.addEventListener('click', () => {
@@ -401,17 +405,15 @@ btnMoreNews.addEventListener('click', () => {
         articleWrapper.classList.add('show');
         arrowRotate.classList.remove('fa-chevron-down');
         arrowRotate.classList.add('fa-chevron-up');
+        altroMenoNews.innerHTML = 'meno';
         x = true
     } else {
         articleWrapper.classList.remove('show');
         arrowRotate.classList.add('fa-chevron-down');
         arrowRotate.classList.remove('fa-chevron-up');
+        altroMenoNews.innerHTML = 'altro';
         x = false
     }
-
-
-
-
 })
 
 

@@ -81,7 +81,7 @@ h3 {
 }
 
 .more {
-    /* padding: 10px 0; */
+    margin: 30px 0;
     display: block;
     margin: 0 auto;
     width: 200px;
@@ -224,10 +224,6 @@ nav {
     width: 100%;
     display: block;
     transition: 0.5s;
-}
-
-.menu li a:active {
-    /* color: red; */
 }
 
 /* home */
@@ -463,13 +459,13 @@ nav {
  }
 
  .disco .cards .canva {
-    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-between;
     margin: 0 auto;
-    max-width: 500px;
-    border: white;
+    width: 60%;
+
+    max-width: 300px;
+    /* border: 1px solid white; */
  }
 
  .disco .cards .canva input {
@@ -543,11 +539,11 @@ nav {
  }
 
  .disco .buttons {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--pad-mobile-2r);
  }
 
  .disco article {
@@ -565,12 +561,13 @@ nav {
  }
 
  .disco article img {
-    width: 20%;
+    /* width: 20%; */
     max-width: 70px;
     fill-rule: var(--orange);
     position: absolute;
     filter: opacity(0);
     transition: 2s;
+    padding: 0.5rem 0;
  }
 
  .disco article.show img {
@@ -580,14 +577,14 @@ nav {
  }
 
  .disco article img.top {
-    top: 0;
+    top: -10px;
     left: 0;
     transform: rotate(180deg);
  }
 
  .disco article img.bottom {
     right: 0;
-    bottom: 0;
+    bottom: -10px;
  }
 
  .disco article .content {
@@ -599,8 +596,9 @@ nav {
  }
 
  .disco h3 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 400;
+    padding: var(--pad-mobile-2r) 0;
  }
 
  .disco ol {
@@ -692,7 +690,6 @@ nav {
     display: flex;
     justify-content: center;
     gap: 1rem;
-
 }
 
 .cont-left, .cont-right  {
@@ -726,6 +723,10 @@ nav {
     background-color: var(--white);
 }
 
+#more-gallery {
+    padding-top: var(--pad-mobile-2r);
+}
+
 /* tour */
 
 .tour {
@@ -748,20 +749,19 @@ nav {
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #000101 69.61%, rgba(0, 1, 1, 0) 100%);
-
+    /* border: 1px solid white; */
 }
 
 .date-fix-cont {
     position: relative;
-    /* top: calc(var(--height-cont) * -1); */
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     transition: 0.3s;
+    transform: translateY(10px);
 }
 
 .date-container.opacity-tour {
@@ -781,14 +781,10 @@ nav {
     transition: 0.2s;
 }
 
-/* .date-container:hover {
-    transform: scale(1.2);
-} */
 
 .cont-top {
     width: 100%;
     height: 3rem;
-    /* border: 1px solid var(--white); */
     display: flex;
     align-items: center;
     gap: 0.7rem;
@@ -807,7 +803,6 @@ nav {
 
 .cont-top .date .day {
     font-size: 3em;
-    /* font-size: 100vh; */
 }
 
 .cont-top .mounth-year {
@@ -838,7 +833,6 @@ nav {
 }
 .cont-bottom {
     width: 100%;
-    padding: 0.8rem;
     display: flex;
     justify-content: center;
     border-bottom: 1px solid rgba(128, 128, 128, 0.568);
@@ -846,6 +840,8 @@ nav {
 
 .cont-bottom button {
     width: 60%;
+    max-width: 160px;
+    margin: 0.8rem 0;
 }
 
 
@@ -909,7 +905,7 @@ nav {
 
 .news .cont-article {
     width: 100%;
-    height: var(--h-card);
+    min-height: var(--h-card);
     border-bottom:3px solid var(--gray);
     margin-top: 30px;
 }
@@ -919,7 +915,6 @@ nav {
     height: fit-content;
     display: flex;
     gap: 0.5rem;
-    padding-bottom: 1rem;
 
 }
 
@@ -942,7 +937,6 @@ nav {
 }
 
 .news .content p {
-    
     line-height: 17px;
     max-height: 238px;
     /* or 100% */
@@ -956,19 +950,26 @@ nav {
     /* text-fill-color: transparent; */
 }
 
-.news button {
+.cont-button {
+    width: 100%;
+    height: fit-content;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news .read-article {
+    width: 60%;
+    max-width: 200px;
+}
+
+.news #more-news {
     display: block;
-    margin: 0 auto;
+    margin: var(--pad-mobile-2r) auto;
     width: 60%;
     transition: 0.3s;
 }
-
-/* .news .line-b {
-    margin: 1rem 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--gray);
-} */
 
 /* store */
 
