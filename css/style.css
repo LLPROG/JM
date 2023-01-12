@@ -92,11 +92,8 @@ h3 {
     padding: 0.8rem 1.1rem;
     color: var(--yellow);
     background-color: var(--black);
-    /* border: 1px solid var(--yellow); */
+    border: none;
     border-radius: 5px;
-
-
-    /* width: 40%; */
 }
 
 .my-btn.sold-out {
@@ -325,11 +322,11 @@ nav {
 
 .player {
     color: var(--white);
-    width: 90%;
+    width: 100%;
 }
 
 .wrapper {
-    width: 100%;
+    width: 90%;
     padding: var(--pad-mobile-2r) 0;
     max-width: 300px;
     margin: 0 auto;
@@ -1120,6 +1117,7 @@ nav {
 }
 
 .contacts .form .sub {
+    margin-top: var(--pad-mobile-2r);
     align-self: center;
 }
 
