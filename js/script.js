@@ -277,9 +277,9 @@ cards.forEach((card, index) => {
         `<h2 class="title-album">${disco[index].title}</h2>
         <span class="year">${disco[index].year}</span>
         <img src="${disco[index].img}" alt="cover">
-        <div class="buttons"><button id="listen" class="my-btn">ASCOLTA</button>
+        <div class="buttons"><button id="listen" class="my-btn-full">ASCOLTA</button>
         <button id="share" class="my-btn">CONDIVIDI</button>
-        <button id="info" class="my-btn">INFO</button></div>
+        <button id="info" class="my-btn-flat"><i class="fa-solid fa-plus"></i>INFO</button></div>
         <article class="article">
         <img src="img/quot.png" alt="virgolette top" class="top">
         <p class="content">${disco[index].content}</p>
@@ -289,7 +289,7 @@ cards.forEach((card, index) => {
         <ol class="list-track">
         ${disco[index].tracks.map((a) => { return "<li>" + a + "</li>" }).join(" ")}
         </ol>`;
-
+    //<i class="fa-sharp fa-solid fa-info"></i>
 })
 
 let show = false;
@@ -350,46 +350,74 @@ let heightContTour = document.querySelectorAll('.date-container');
 let dateContainer = document.querySelectorAll('.date-container');
 
 
-let i = 1
-let y = 0
+let iTour = 1
+let yTour = 0
 
-function opacityTourFun() {
+function opacityTourFun(x, z) {
     dateContainer.forEach((el) => {
         el.classList.remove('opacity-tour');
     })
 
-    dateContainer[y].classList.add('opacity-tour');
-    dateContainer[y + 2].classList.add('opacity-tour');
+    dateContainer[x].classList.add('opacity-tour');
+    dateContainer[z].classList.add('opacity-tour');
 }
 
-opacityTourFun();
+opacityTourFun(yTour, (yTour + 2));
 
 btnTourDown.addEventListener('click', () => {
-    if (i <= 3) {
-        dateFixCont.style.top = "-" + (heightContTour[0].clientHeight * i) + "px"
-        i++
-        y++
-        // console.log(i + ' ' + 'i')
-        // console.log(y + ' ' + 'y')
+
+    if (iTour == 4) {
+        opacityTourFun(3, 4);
+        iTour++
     }
 
-    opacityTourFun();
+    if (iTour <= 3 && iTour > 0) {
+        dateFixCont.style.top = "-" + (heightContTour[0].clientHeight * iTour) + "px"
+        iTour++
+        yTour++
+
+        opacityTourFun(yTour, (yTour + 2));
+        console.log('cond')
+    }
+
+    if (iTour == 0) {
+        opacityTourFun(yTour, (yTour + 2));
+        iTour++
+    }
+
+    console.log(iTour + ' ' + 'i')
+    console.log(yTour + ' ' + 'y')
+
 });
 
 btnTourUp.addEventListener('click', () => {
-    if (i == 2) {
+
+    if (iTour == 1) {
+        opacityTourFun(1, 2);
+        iTour--
+    }
+
+    if (iTour == 2) {
         dateFixCont.style.top = "0px";
-        i = 1
-        y = 0
+        iTour = 1
+        yTour = 0
+        opacityTourFun(yTour, (yTour + 2));
     }
 
-    if (i > 2) {
-        y--
-        dateFixCont.style.top = "-" + (heightContTour[0].clientHeight * y) + "px";
-        i--
+    if (iTour > 2 && iTour < 5) {
+        yTour--
+        dateFixCont.style.top = "-" + (heightContTour[0].clientHeight * yTour) + "px";
+        iTour--
+        opacityTourFun(yTour, (yTour + 2));
     }
 
-    opacityTourFun();
+    if (iTour == 5) {
+        opacityTourFun(yTour, (yTour + 2));
+        iTour--
+    }
+
+    console.log(iTour + ' ' + 'i')
+    console.log(yTour + ' ' + 'y')
 });
 
 // news
@@ -398,23 +426,58 @@ let btnMoreNews = document.getElementById('more-news');
 let articleWrapper = document.querySelector('.article-wrapper');
 let arrowRotate = document.getElementById('icon');
 let altroMenoNews = document.getElementById('news-altro-meno');
-let x = false
+let boolNews = false
 
 btnMoreNews.addEventListener('click', () => {
-    if (x == false) {
+    if (boolNews == false) {
         articleWrapper.classList.add('show');
         arrowRotate.classList.remove('fa-chevron-down');
         arrowRotate.classList.add('fa-chevron-up');
         altroMenoNews.innerHTML = 'meno';
-        x = true
+        boolNews = true
     } else {
         articleWrapper.classList.remove('show');
         arrowRotate.classList.add('fa-chevron-down');
         arrowRotate.classList.remove('fa-chevron-up');
         altroMenoNews.innerHTML = 'altro';
-        x = false
+        boolNews = false
     }
 })
+
+
+// store
+
+let btnStoreNext = document.querySelector('.next-merc');
+let btnStorePrev = document.querySelector('.prev-merc');
+let slider = document.querySelector('.store .slider');
+let allMerc = document.querySelectorAll('.merc');
+
+let iStore = 1;
+let yStore = 0;
+
+btnStoreNext.addEventListener('click', () => {
+    if (iStore < 5) {
+        slider.style.left = "-" + (allMerc[0].clientWidth * iStore) + "px";
+        iStore++
+        yStore++
+        console.log(iStore);
+        console.log(yStore);
+    }
+
+});
+
+
+btnStorePrev.addEventListener('click', () => {
+    if (yStore > 0) {
+        yStore--
+        slider.style.left = "-" + (allMerc[0].clientWidth * yStore) + "px";
+        iStore--
+        console.log(iStore);
+        console.log(yStore);
+    }
+});
+
+
 
 
 
